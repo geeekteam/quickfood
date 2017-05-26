@@ -24,8 +24,8 @@
     <!-- BASE CSS -->
     <link href="css/base.css" rel="stylesheet">
 
-    <!-- Modernizr -->
-    <script src="js/modernizr.js"></script>
+    <!-- SPECIFIC CSS -->
+    <link href="css/morphext.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
     <script src="js/html5shiv.min.js"></script>
@@ -125,16 +125,16 @@
 <!-- End Header =============================================== -->
 
 <!-- SubHeader =============================================== -->
-<section class="header-video">
-    <div id="hero_video">
+<section class="parallax-window" id="home" data-parallax="scroll" data-image-src="img/sub_header_home.jpg" data-natural-width="1400" data-natural-height="550">
+    <div id="subheader">
         <div id="sub_content">
-            <h1>Order Takeaway or Delivery Food</h1>
+            <h1>Order <strong id="js-rotating">Takeaway,Delivery,Quick</strong> Food</h1>
             <p>
                 Ridiculus sociosqu cursus neque cursus curae ante scelerisque vehicula.
             </p>
             <form method="post" action="list_page.html">
                 <div id="custom-search-input">
-                    <div class="input-group">
+                    <div class="input-group ">
                         <input type="text" class=" search-query" placeholder="Your Address or postal code">
                         <span class="input-group-btn">
                         <input type="submit" class="btn_search" value="submit">
@@ -143,8 +143,7 @@
                 </div>
             </form>
         </div><!-- End sub_content -->
-    </div>
-    <img src="img/video_fix.png" alt="" class="header-video--media" data-video-src="video/intro" data-teaser-source="video/intro" data-provider="Vimeo" data-video-width="1920" data-video-height="960">
+    </div><!-- End subheader -->
     <div id="count" class="hidden-xs">
         <ul>
             <li><span class="number">2650</span> Restaurant</li>
@@ -152,7 +151,7 @@
             <li><span class="number">12350</span> Registered Users</li>
         </ul>
     </div>
-</section><!-- End Header video -->
+</section><!-- End section -->
 <!-- End SubHeader ============================================ -->
 
 <!-- Content ================================================== -->
@@ -538,17 +537,15 @@
 <script src="assets/validate.js"></script>
 
 <!-- SPECIFIC SCRIPTS -->
-<script src="js/video_header.js"></script>
+<script src="js/morphext.min.js"></script>
 <script>
-    $(document).ready(function() {
-        'use strict';
-        HeaderVideo.init({
-            container: $('.header-video'),
-            header: $('.header-video--media'),
-            videoTrigger: $("#video-trigger"),
-            autoPlayVideo: true
-        });
-
+    $("#js-rotating").Morphext({
+        animation: "fadeIn", // Overrides default "bounceIn"
+        separator: ",", // Overrides default ","
+        speed: 2300, // Overrides default 2000
+        complete: function () {
+            // Overrides default empty function
+        }
     });
 </script>
 

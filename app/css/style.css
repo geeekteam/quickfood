@@ -1637,6 +1637,11 @@ ul.opening_list li span {
     position: relative
 }
 
+.parallax-window_sub_header_home{
+    background: url(../img/sub_header_home.jpg) center no-repeat fixed;
+    background-size: cover;
+}
+
 .parallax-content-2 {
     display: table;
     width: 100%;
